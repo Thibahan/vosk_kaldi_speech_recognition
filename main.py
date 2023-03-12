@@ -5,16 +5,18 @@ import wave
 # Filename for audio recording
 recording = 'recording.wav'
 
+# Name of the model
+model_name = "vosk-model-de-0.21"
+
 # Record microphone input for [seconds]
 seconds = 5
 record_audio(seconds, recording)
 
 # Open recoreded wav file
 wf = wave.open(recording, "rb")
-print(type(wf))
 
 # Load model and get results of recognizer
-recognizer = load_model(wf.getframerate())
+recognizer = load_model(wf.getframerate(), model_name=model_name)
 results = get_results(wf, recognizer)
 
 # Get text from results dict and split into words
