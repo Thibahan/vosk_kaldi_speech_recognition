@@ -154,5 +154,8 @@ cython_debug/
 
 # Custom
 vosk-model-small-de-0.15/*
+vosk-model-de-0.21/*
 recording.wav
 .vscode/*
+
+.DS_Store
